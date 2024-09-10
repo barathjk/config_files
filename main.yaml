@@ -1,0 +1,40 @@
+- tenant:
+    name: CCU
+    source:
+      githubzuulapp:
+        config-projects:
+          - barathjk/zuul_config:
+              load-branch: main
+        untrusted-projects:
+          - barathjk/demo_repo_zuul
+          - barathjk/run_bazel
+          - barathjk/bazel_run_test
+          - barathjk/generate_quality
+      minsonzuulapp:
+        config-projects:
+          - Minson2951/zuul_config:
+              load-branch: main
+        untrusted-projects:
+          - Minson2951/JsontoExcel
+      opendev.org:
+        untrusted-projects:
+          - zuul/zuul-jobs:
+              include:
+                - job
+- tenant:               
+    name: HVS
+    source:
+      githubzuulapp:
+        config-projects:
+          - barathjk/zuul_config:
+              load-branch: main
+        untrusted-projects:
+          - barathjk/check_quality 
+          - barathjk/run_matlab  
+      opendev.org:
+        untrusted-projects:
+          - zuul/zuul-jobs:
+              include:
+                - job
+                
+       
